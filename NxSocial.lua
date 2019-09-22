@@ -1124,7 +1124,7 @@ function Nx.Social.List:Create()
 			local i = self:FindFriendI (self.MenuSelName)
 			if i then
 				self.FriendsFrame["NotesID"] = i
-				local friend = C_FriendList.GetFriendInfo (i)
+				local friend = C_FriendList.GetFriendInfoByIndex (i)
 				StaticPopup_Show ("SET_FRIENDNOTE", friend.name)
 			end
 		end
@@ -1339,7 +1339,7 @@ function Nx.Social.List:FindFriendI (friend)
 
 	local cnt = C_FriendList.GetNumFriends()
 	for n = 1, cnt do
-		local friend = C_FriendList.GetFriendInfo (n)
+		local friend = C_FriendList.GetFriendInfoByIndex (n)
 		local name, level, class, area, connected, status, note = friend.name, friend.level, friend.class, friend.area, friend.connected, friend.afk, friend.notes
 
 		if name == friend then
@@ -1446,7 +1446,7 @@ function Nx.Social.List:Update()
 		local cnt = C_FriendList.GetNumFriends()
 
 		for n = 1, cnt do
-			local friend = C_FriendList.GetFriendInfo (n)
+			local friend = C_FriendList.GetFriendInfoByIndex (n)
 			local name, level, class, area, connected, status, note = friend.name, friend.level, friend.class, friend.area, friend.connected, friend.afk, friend.notes
 			if name then
 
@@ -1518,7 +1518,7 @@ function Nx.Social.List:Update()
 			local name, level, class, area, connected, status, note
 
 			if i then
-				local friend = C_FriendList.GetFriendInfo(i)
+				local friend = C_FriendList.GetFriendInfoByIndex(i)
 				name, level, class, area, connected, status, note = friend.name, friend.level, friend.class, friend.area, friend.connected, friend.afk, friend.notes
 			end
 
